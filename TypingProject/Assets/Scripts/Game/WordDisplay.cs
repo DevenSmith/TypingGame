@@ -16,6 +16,19 @@ namespace TypingGame
         [SerializeField]
         private FloatSO fallSpeed;
         
+        public TMP_Text Text
+        {
+            get => text;
+            set => text = value;
+        }
+
+        public FloatSO FallSpeed
+        {
+            get => fallSpeed;
+            set => fallSpeed = value;
+        }
+        
+
         public void SetWord(string word)
         {
             text.text = word;

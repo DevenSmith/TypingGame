@@ -1,10 +1,7 @@
-﻿using System;
-using Devens;
+﻿using Devens;
 
 namespace TypingGame
 {
-    using System.Collections;
-    using System.Collections.Generic;
     using UnityEngine;
 
     public class WordTimer : MonoBehaviour

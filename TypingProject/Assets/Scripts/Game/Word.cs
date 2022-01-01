@@ -16,8 +16,12 @@
         public Word(string _word, WordDisplay _display)
         {
             word = _word;
-            display = _display;
-            display.SetWord(word);
+            
+            if (_display != null)
+            {
+                display = _display;
+                display.SetWord(word);
+            }
         }
 
         public char GetNextLetter()
@@ -28,14 +32,17 @@
         public void TypeLetter()
         {
             typeIndex++;
-            display.RemoveLetter();
+            if (display != null)
+            {
+                display.RemoveLetter();
+            }
         }
 
         public bool WordTyped()
         {
             bool wordTyped = (typeIndex >= word.Length);
 
-            if (wordTyped)
+            if (wordTyped && display != null)
             {
                 display.RemoveWord();
             }
