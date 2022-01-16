@@ -1,11 +1,8 @@
 ﻿namespace Devens
 {
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Xml.Schema;
     using UnityEngine;
 
-    [CreateAssetMenu]
+    [CreateAssetMenu (menuName = "Devens/FloatSO")]
     public class FloatSO : ScriptableObject
     {
         [SerializeField] private float floatValue;
@@ -19,8 +16,8 @@
 
         public float Value
         {
-            get { return floatValue; }
-            set { floatValue = value; }
+            get => floatValue;
+            set => floatValue = value;
         }
     }
 }
