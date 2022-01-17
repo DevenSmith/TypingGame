@@ -1,6 +1,5 @@
 ﻿namespace TypingGame
 {
-    using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
 
@@ -19,6 +18,11 @@
         {
             var word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
             words.Add(word);
+        }
+
+        public float GetLowestWordPosition()
+        {
+            return words[0].display.gameObject.transform.position.y;
         }
 
         public void TypeLetter(char letter)

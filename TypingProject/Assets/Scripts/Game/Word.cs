@@ -1,4 +1,6 @@
-﻿namespace TypingGame
+﻿using Devens;
+
+namespace TypingGame
 {
     using System.Collections;
     using System.Collections.Generic;
@@ -10,9 +12,9 @@
         [SerializeField]
         private string word;
         
-        private int typeIndex = 0;
-        private WordDisplay display;
-        
+        private int _typeIndex = 0;
+        public WordDisplay display;
+
         public Word(string _word, WordDisplay _display)
         {
             word = _word;
@@ -26,12 +28,13 @@
 
         public char GetNextLetter()
         {
-            return word[typeIndex];
+            return word[_typeIndex];
         }
 
         public void TypeLetter()
         {
-            typeIndex++;
+            _typeIndex++;
+            EventManager.TriggerEvent("LetterTyped");
             if (display != null)
             {
                 display.RemoveLetter();
@@ -40,8 +43,13 @@
 
         public bool WordTyped()
         {
-            bool wordTyped = (typeIndex >= word.Length);
+            bool wordTyped = (_typeIndex >= word.Length);
 
+            if (wordTyped)
+            {
+                EventManager.TriggerEvent("WordTyped");
+            }
+            
             if (wordTyped && display != null)
             {
                 display.RemoveWord();
