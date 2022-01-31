@@ -2,6 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+///<Summary>
+/// an event manager found at
+/// https://learn.unity.com/tutorial/create-a-simple-messaging-system-with-events#5cf5960fedbc2a281acd21fa
+///</Summary>
 namespace Devens
 {
     public class EventManager : MonoBehaviour {
